@@ -5,8 +5,7 @@ from .models import Student
 from .serializers import StudentSerializer
 from rest_framework import viewsets, filters
 from django_filters.rest_framework import DjangoFilterBackend
-from .paginations import Pagination
-
+from .paginations import StudentPagination
 
 
 class StudentViewSet(viewsets.ModelViewSet):
@@ -21,6 +20,6 @@ class StudentViewSet(viewsets.ModelViewSet):
     search_fields = ['name', 'email', 'department']
     ordering_fields = ['name']
     filterset_fields = ['name', 'age']
-    pagination_class = Pagination
+    pagination_class = StudentPagination
 
 
