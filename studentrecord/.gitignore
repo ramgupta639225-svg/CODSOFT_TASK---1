@@ -1,0 +1,11 @@
+studentrecord/db.sqlite3
+*.sqlite3
+resumes/
+media/
+.venv/
+venv/
+.env
+__pycache__/
+*.py[cod]
+.vscode/
+.idea/
