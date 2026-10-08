@@ -14,11 +14,8 @@ class CourseViewSet(viewsets.ModelViewSet):
                         ]
 
     filterset_fields = ['name', 'code', 'duration_unit']
-    search_fields = ['name', 'code', 'duration']
+    search_fields = ['name', 'code']
     ordering_fields = ['name']
     pagination_class = CoursePagination
-
-
-
 
 

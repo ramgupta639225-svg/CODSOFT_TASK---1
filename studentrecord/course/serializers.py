@@ -4,7 +4,7 @@ from .models import Course
 
 class CourseSerializer(serializers.ModelSerializer):
 
-    def vailidate_name(self, value):
+    def validate_name(self, value):
         if not value.strip():
             raise serializers.ValidationError('Name cannot be blank')
         pass

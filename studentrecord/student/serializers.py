@@ -4,12 +4,12 @@ from .models import Student
 
 class StudentSerializer(serializers.ModelSerializer):
 
-    def vailidate_name(self, value):
+    def validate_name(self, value):
         if not value.strip():
             raise serializers.ValidationError('Name can not be blank')
         return value
 
-    def vailidate_email(self, value):
+    def validate_email(self, value):
         email = value.strip().lower()
         existing = Student.objects.filter(email__iexact=email)
         if existing.exists():

@@ -19,7 +19,7 @@ class StudentViewSet(viewsets.ModelViewSet):
 
     search_fields = ['name', 'email', 'department']
     ordering_fields = ['name']
-    filterset_fields = ['name', 'age']
+    filterset_fields = ['name', 'age', 'email', 'department']
     pagination_class = StudentPagination
 
 

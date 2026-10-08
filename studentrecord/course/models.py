@@ -4,7 +4,7 @@ from django.db import models
 
 class Course(models.Model):
     name = models.CharField(max_length=200)
-    code = models.CharField(max_length=10)
+    code = models.CharField(max_length=10, unique=True)
     description = models.TextField(null=False)
     duration = models.PositiveIntegerField(null=False)
     duration_unit = models.CharField(max_length=10, choices=[('day', 'Day'), ('week', 'Week'), ('month', 'Month')])
@@ -12,5 +12,7 @@ class Course(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.name
 
 
