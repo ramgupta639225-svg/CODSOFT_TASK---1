@@ -12,9 +12,13 @@ class StudentSerializer(serializers.ModelSerializer):
     def validate_email(self, value):
         email = value.strip().lower()
         existing = Student.objects.filter(email__iexact=email)
+
+        if self.instance:
+            existing = existing.exclude(pk=self.instance.pk)
+
         if existing.exists():
-            raise serializers.ValidationError("Email already exists")
-        return value
+            raise serializers.ValidationError('Email already exists')
+        return email
 
     def validate_phone(self, value):
         import re
@@ -33,6 +37,4 @@ class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
         fields = '__all__'
-
-
 

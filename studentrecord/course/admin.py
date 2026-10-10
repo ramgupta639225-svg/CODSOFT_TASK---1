@@ -5,5 +5,3 @@ from .models import Course
 
 admin.site.register(Course)
 
-
-
