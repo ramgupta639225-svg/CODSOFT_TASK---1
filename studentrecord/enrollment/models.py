@@ -1,7 +1,6 @@
 from django.db import models
 from student.models import Student
 # Create your models here.
-
 from course.models import Course
 
 class Enrollment(models.Model):
@@ -20,5 +19,4 @@ class Enrollment(models.Model):
                 name='unique_student_course',
             )
         ]
-
 
