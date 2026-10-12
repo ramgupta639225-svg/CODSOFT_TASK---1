@@ -23,3 +23,4 @@ class StudentViewSet(viewsets.ModelViewSet):
     pagination_class = StudentPagination
 
 
+
