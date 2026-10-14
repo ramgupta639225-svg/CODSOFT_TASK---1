@@ -21,3 +21,4 @@ class EnrollmentViewSet(viewsets.ModelViewSet):
     ordering_fields = [ 'status', 'id']
     filterset_fields = [ 'student', 'course', 'status']
     pagination_class = EnrollmentPagination
+
